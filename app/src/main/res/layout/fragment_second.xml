@@ -27,4 +27,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="107dp"
+        android:layout_height="55dp"
+        android:text="Nome"
+        android:textColor="#822432"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="166dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

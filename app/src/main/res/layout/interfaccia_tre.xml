@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/avanti"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="textEnd">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textColor="#822433"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="154dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="102dp"
+        android:layout_height="38dp"
+        android:text="Cognome"
+        android:textColor="#822433"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="238dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="130dp"
+        android:layout_height="42dp"
+        android:background="#822433"
+        android:backgroundTint="#822433"
+        android:text="Avanti"
+        android:textColorLink="#822433"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="569dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
