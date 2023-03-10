@@ -1,40 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/avanti"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#97FDFAF2"
     android:textAlignment="textEnd">
 
+    <EditText
+        android:id="@+id/CognomeEditText"
+        android:layout_width="176dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:drawablePadding="5dp"
+        android:hint="Cognome"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/CognomeText"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="@+id/CognomeText"
+        app:layout_constraintTop_toBottomOf="@+id/CognomeText" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ConfPasswordText"
+        android:layout_width="190dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="68dp"
+        android:text="Conferma Password"
+        android:textColor="#822433"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword2"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordText" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:drawablePadding="5dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/PasswordText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/PasswordText"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordText" />
+
+    <TextView
+            android:id="@+id/CognomeText"
+            android:layout_width="100dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="64dp"
+            android:text="Cognome"
+            android:textColor="#822433"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
+            app:layout_constraintHorizontal_bias="0.013"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/NomeText" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="176dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:background ="@drawable/custom_edittext"
+        android:drawableLeft ="@drawable/baseline_person_24"
+        android:drawablePadding="5dp"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/CognomeText"
+        app:layout_constraintEnd_toEndOf="@+id/NomeText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/NomeText"
+        app:layout_constraintTop_toBottomOf="@+id/NomeText"
+        app:layout_constraintVertical_bias="0.392" />
+        >
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:drawablePadding="5dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/EmailText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/EmailText"
+        app:layout_constraintTop_toBottomOf="@+id/EmailText" />
+
+    <TextView
+        android:id="@+id/NomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="172dp"
         android:text="Nome"
         android:textColor="#822433"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:drawablePadding="5dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/ConfPasswordText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ConfPasswordText"
+        app:layout_constraintTop_toBottomOf="@+id/ConfPasswordText" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="102dp"
-        android:layout_height="38dp"
-        android:text="Cognome"
+        android:id="@+id/PasswordText"
+        android:layout_width="103dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="56dp"
+        android:text="Password"
         android:textColor="#822433"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="238dp" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/EmailText" />
+
+    <TextView
+        android:id="@+id/EmailText"
+        android:layout_width="78dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="56dp"
+        android:text="Email"
+        android:textColor="#822433"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/CognomeEditText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/CognomeEditText"
+        app:layout_constraintTop_toBottomOf="@+id/CognomeText" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="130dp"
-        android:layout_height="42dp"
-        android:background="#822433"
+        android:id="@+id/Avanti"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:backgroundTint="#822433"
+        android:forceHasOverlappingRendering="false"
         android:text="Avanti"
-        android:textColorLink="#822433"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="569dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword3"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintVertical_bias="0.336" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
