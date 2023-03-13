@@ -47,7 +47,7 @@ public class LinkHa {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + corso.toString() + " e " + cdl.toString() + ".\nAnno del Corso: " + annoCorso;
+		return "Questo e' un link tra: " + corso.toString() + " e " + cdl.toString() + ".\nAnno del Corso: " + annoCorso;
 	}
 	
 }

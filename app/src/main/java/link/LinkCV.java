@@ -29,7 +29,7 @@ public class LinkCV {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + corso.toString() + " e " + val.toString();
+		return "Questo e' un link tra: " + corso.toString() + " e " + val.toString();
 	}
 	
 

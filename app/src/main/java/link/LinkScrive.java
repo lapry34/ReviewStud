@@ -38,7 +38,7 @@ public class LinkScrive {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + stud.toString() + " e " + rec.toString();
+		return "Questo e' un link tra: " + stud.toString() + " e " + rec.toString();
 	}
 	
 }

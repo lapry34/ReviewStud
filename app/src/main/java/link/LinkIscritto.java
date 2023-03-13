@@ -47,7 +47,7 @@ public class LinkIscritto {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + stud.toString() + " e " + cdl.toString() + ". Anno di iscrizione: " + annoIscrizione;
+		return "Questo e' un link tra: " + stud.toString() + " e " + cdl.toString() + ". Anno di iscrizione: " + annoIscrizione;
 	}
 	
 }
