@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Prima">
 
     <Button
         android:id="@+id/connetti"
@@ -14,10 +15,11 @@
         android:text="Connetti"
         app:layout_constraintEnd_toEndOf="@+id/Benvenuto"
         app:layout_constraintStart_toStartOf="@+id/Benvenuto"
-        app:layout_constraintTop_toBottomOf="@+id/Benvenuto" />
+        app:layout_constraintTop_toBottomOf="@+id/Benvenuto"
+        />
 
     <Button
-        android:id="@+id/Iscriviti"
+        android:id="@+id/iscriviti"
         android:layout_width="166dp"
         android:layout_height="58dp"
         android:layout_marginTop="48dp"
@@ -28,7 +30,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/connetti"
         app:layout_constraintTop_toBottomOf="@+id/connetti"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        />
 
     <TextView
         android:id="@+id/Benvenuto"
@@ -48,8 +51,10 @@
         android:layout_width="100dp"
         android:layout_height="107dp"
         android:layout_marginTop="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stemma_sapienza"
-        tools:layout_editor_absoluteX="155dp" />
+        app:srcCompat="@drawable/uniroma1_2"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
