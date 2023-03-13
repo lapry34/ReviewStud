@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SecondFragment">
+    tools:context=".SecondFragment"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/textview_second"
@@ -27,4 +28,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="107dp"
+        android:layout_height="55dp"
+        android:text="Nome"
+        android:textColor="#822432"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="166dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
