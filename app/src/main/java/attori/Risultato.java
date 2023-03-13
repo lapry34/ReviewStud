@@ -66,7 +66,7 @@ public class Risultato {
 	public String toString() {
 		String str = "Appello: " + appello.label + 
 				   " Sessione: " + sessione.label +
-				   " Esonero: " + (esonero ? "Sì" : "No");
+				   " Esonero: " + (esonero ? "Si" : "No");
 		return str;
 	}
 	

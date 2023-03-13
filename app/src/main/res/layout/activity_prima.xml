@@ -34,24 +34,22 @@
         android:id="@+id/Benvenuto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="188dp"
         android:text="BENVENUTO"
         android:textColor="#822433"
         android:textSize="37dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="100dp"
         android:layout_height="107dp"
         android:layout_marginTop="68dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stemma_sapienza" />
+        app:srcCompat="@drawable/stemma_sapienza"
+        tools:layout_editor_absoluteX="155dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

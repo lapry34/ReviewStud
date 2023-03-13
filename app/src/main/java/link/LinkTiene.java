@@ -41,7 +41,7 @@ public class LinkTiene {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + prof.toString() + " e " + corso.toString();
+		return "Questo e' un link tra: " + prof.toString() + " e " + corso.toString();
 	}
 	
 }
