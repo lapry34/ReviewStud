@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/stemma_sapienza" />
+        app:srcCompat="@drawable/uniroma1_2" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -69,6 +69,7 @@
         android:layout_marginTop="52dp"
         android:text="Password"
         android:textColor="#822433"
+
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />

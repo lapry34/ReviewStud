@@ -15,48 +15,22 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import me.gabriele.reviewstud.databinding.ActivityPrimaBinding;
+import me.gabriele.reviewstud.databinding.ActivityTerzaBinding;
 
-public class Prima extends AppCompatActivity {
+public class Terza extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityPrimaBinding binding;
+    private ActivityTerzaBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityPrimaBinding.inflate(getLayoutInflater());
+        binding = ActivityTerzaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-       Button connetti=(Button) findViewById(R.id.connetti);
-       Button iscriviti=(Button) findViewById(R.id.iscriviti);
 
-       connetti.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                Intent intent= new Intent(Prima.this, Seconda.class);
-                 startActivity(intent);
-             }
-         });
-
-
-
-
-
-    iscriviti.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View view) {
-            Intent intent= new Intent(Prima.this, Terza.class);
-            startActivity(intent);
-        }
-    });
-
-
-
-}
-
+    }
 
     @Override
     public boolean onSupportNavigateUp() {

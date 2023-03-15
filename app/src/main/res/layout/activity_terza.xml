@@ -5,8 +5,8 @@
     android:id="@+id/avanti"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#97FDFAF2"
-    android:textAlignment="textEnd">
+    android:textAlignment="textEnd"
+    tools:context=".Terza">
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
