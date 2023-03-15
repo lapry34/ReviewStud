@@ -41,6 +41,7 @@ public class Seconda extends AppCompatActivity {
                 if(motionEvent.getAction()==MotionEvent.ACTION_UP){
                     if(motionEvent.getRawX()>=password.getRight()-password.getCompoundDrawables()[right].getBounds().width()){
                         int selection=password.getSelectionEnd();
+                        int sel=password.getSelectionStart();
                         if(passwordVisibile){
                             //set drawable image here
                             password.setCompoundDrawablesRelativeWithIntrinsicBounds( 0,0,R.drawable.baseline_visibility_off_24,0);
@@ -54,6 +55,7 @@ public class Seconda extends AppCompatActivity {
                             passwordVisibile = true;
                         }
                         password.setSelection(selection);
+                        password.setSelection(sel);
                         return true;
                     }
                 }
