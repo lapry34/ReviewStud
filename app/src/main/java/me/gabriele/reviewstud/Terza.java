@@ -7,8 +7,12 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,13 +25,75 @@ public class Terza extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityTerzaBinding binding;
-
+    EditText password;
+    EditText confermaPassword;
+    boolean passwordVisibile;
+    boolean confermaVisibile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityTerzaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        password=findViewById(R.id.editTextTextPassword);
+        confermaPassword=findViewById(R.id.ConfPasswordEditText);
+        password.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                final int right=2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP){
+                    if(motionEvent.getRawX()>=password.getRight()-password.getCompoundDrawables()[right].getBounds().width()){
+                        int selection=password.getSelectionEnd();
+                        int sel=password.getSelectionStart();
+                        if(passwordVisibile){
+                            //set drawable image here
+                            password.setCompoundDrawablesRelativeWithIntrinsicBounds( R.drawable.baseline_lock_24,0,R.drawable.baseline_visibility_off_24,0);
+                            //for hide password
+                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisibile=false;
+                        }else {
+                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_lock_24, 0, R.drawable.baseline_visibility_24, 0);
+                            //for show password
+                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisibile = true;
+                        }
+                        password.setSelection(selection);
+                        password.setSelection(sel);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+        confermaPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                final int right=2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP){
+                    if(motionEvent.getRawX()>=confermaPassword.getRight()-confermaPassword.getCompoundDrawables()[right].getBounds().width()){
+                        int selection=confermaPassword.getSelectionEnd();
+                        int sel=confermaPassword.getSelectionStart();
+                        if(confermaVisibile){
+                            //set drawable image here
+                            confermaPassword.setCompoundDrawablesRelativeWithIntrinsicBounds( R.drawable.baseline_lock_24,0,R.drawable.baseline_visibility_off_24,0);
+                            //for hide password
+                            confermaPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            confermaVisibile=false;
+                        }else {
+                            confermaPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_lock_24, 0, R.drawable.baseline_visibility_24, 0);
+                            //for show password
+                            confermaPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            confermaVisibile = true;
+                        }
+                        confermaPassword.setSelection(selection);
+                        confermaPassword.setSelection(sel);
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+        });
 
 
     }
