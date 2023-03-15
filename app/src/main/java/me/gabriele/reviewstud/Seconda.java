@@ -44,12 +44,12 @@ public class Seconda extends AppCompatActivity {
                         int sel=password.getSelectionStart();
                         if(passwordVisibile){
                             //set drawable image here
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds( 0,0,R.drawable.baseline_visibility_off_24,0);
+                            password.setCompoundDrawablesRelativeWithIntrinsicBounds( R.drawable.baseline_lock_24,0,R.drawable.baseline_visibility_off_24,0);
                             //for hide password
                             password.setTransformationMethod(PasswordTransformationMethod.getInstance());
                             passwordVisibile=false;
                         }else {
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.baseline_visibility_24, 0);
+                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_lock_24, 0, R.drawable.baseline_visibility_24, 0);
                             //for show password
                             password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                             passwordVisibile = true;
