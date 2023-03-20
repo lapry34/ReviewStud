@@ -11,10 +11,13 @@ public final class Valutazione {
 	LinkRV linkRV;
 	LinkVP linkVP;
 	LinkCV linkCV;
+	
+	private final int ID;
 	public static final int MOLT = 1;
 	
-	public Valutazione() {
+	public Valutazione(int ID) {
 		super();
+		this.ID = ID;
 		linkRV = null;
 		linkVP = null;
 	}
@@ -120,6 +123,10 @@ public final class Valutazione {
 	public LinkCV getLinkCV() throws EccezioneCardMin {
 		if(quantiCV() > 0) return linkCV;
 		else throw new EccezioneCardMin();
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }

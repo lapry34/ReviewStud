@@ -20,8 +20,11 @@ public class CorsoDiLaurea {
 	private HashSet<LinkIscritto> studenti;
 	private HashSet<LinkHa> corsi;
 
+	private final int ID;
+	
 	//COSTRUTTORE
-	public CorsoDiLaurea(String nome, String ord, boolean mag) {
+	public CorsoDiLaurea(int ID, String nome, String ord, boolean mag) {
+		this.ID = ID;
 		this.nome = nome;
 		this.ordinamento = ord;		
 		this.magistrale = mag;
@@ -112,6 +115,10 @@ public class CorsoDiLaurea {
 				     " Ordinamento: " + this.ordinamento + (magistrale?", Laurea Magistrale":", Laurea Triennale") + 
 				     " CFU totali: " + this.totCfu;	
 		return str;
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }

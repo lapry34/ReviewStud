@@ -7,9 +7,11 @@ public class LinkRV {
 	
 	private final Recensione rec;
 	private final Valutazione val;
+	private final int ID;
 	
-	public LinkRV(Recensione rec, Valutazione val) throws EccezionePrecondizioni {
+	public LinkRV(int ID, Recensione rec, Valutazione val) throws EccezionePrecondizioni {
 		if(rec ==  null || val ==  null) throw new EccezionePrecondizioni();
+		this.ID = ID;
 		this.rec = rec;
 		this.val = val;
 	}
@@ -29,7 +31,7 @@ public class LinkRV {
 	
 	@Override
 	public String toString() {
-		return "Questo e' un link tra: " + rec.toString() + " e " + val.toString();
+		return "Questo è un link tra: " + rec.toString() + " e " + val.toString();
 	}
 	
 
@@ -39,6 +41,10 @@ public class LinkRV {
 
 	public Valutazione getVal() {
 		return val;
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }

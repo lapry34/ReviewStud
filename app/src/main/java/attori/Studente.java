@@ -11,6 +11,7 @@ import manager.ManagerScrive;
 
 public class Studente {
 	//CAMPI DATI PRIVATI
+	private final int ID;
 	private final String nome;
 	private final String cognome;
 	private final String matricola;
@@ -21,7 +22,8 @@ public class Studente {
 	private HashSet<LinkScrive> recensioni;
 	private HashSet<LinkIscritto> cdl;
 	
-	public Studente(String nome, String cognome, String matricola, String email, String password) {
+	public Studente(int ID, String nome, String cognome, String matricola, String email, String password) {
+		this.ID = ID;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.matricola = matricola;		
@@ -126,6 +128,10 @@ public class Studente {
 				     " Cognome: " + this.cognome +
 				     " Matricola: " + this.matricola;	
 		return str;
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }
