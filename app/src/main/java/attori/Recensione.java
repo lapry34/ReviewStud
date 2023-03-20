@@ -16,9 +16,12 @@ public class Recensione {
 	public static final int CARD_RV = 1;
 	private LinkScrive studente;
 	
+	private final int ID;
 	
-	public Recensione(String testo, int voto, Risultato risultato) throws EccezioneCardMin {
+	
+	public Recensione(int ID, String testo, int voto, Risultato risultato) throws EccezioneCardMin {
 		super();
+		this.ID = ID;
 		if(risultato ==  null) throw new EccezioneCardMin();
 		this.linkRV = null;
 		this.testo = testo;
@@ -111,5 +114,9 @@ public class Recensione {
 	public LinkScrive getLinkScritto() throws EccezioneCardMin {
 		if(quantiRV() > 0) return studente;
 		else throw new EccezioneCardMin();
+	}
+
+	public int getID() {
+		return ID;
 	}
 }

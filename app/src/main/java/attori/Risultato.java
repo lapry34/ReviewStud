@@ -35,13 +35,15 @@ public class Risultato {
 		}
 	}
 	
+	private final int ID;
 	private final Appello appello;
 	private final Sessione sessione;
 	private final boolean esonero;
 	
 	
-	public Risultato(Appello appello, Sessione sessione, boolean esonero) {
+	public Risultato(int ID, Appello appello, Sessione sessione, boolean esonero) {
 		super();
+		this.ID = ID;
 		this.appello = appello;
 		this.sessione = sessione;
 		this.esonero = esonero;
@@ -66,8 +68,13 @@ public class Risultato {
 	public String toString() {
 		String str = "Appello: " + appello.label + 
 				   " Sessione: " + sessione.label +
-				   " Esonero: " + (esonero ? "Si" : "No");
+				   " Esonero: " + (esonero ? "Sì" : "No");
 		return str;
+	}
+
+
+	public int getID() {
+		return ID;
 	}
 	
 }
