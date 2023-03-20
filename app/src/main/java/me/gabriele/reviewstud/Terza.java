@@ -3,8 +3,6 @@ package me.gabriele.reviewstud;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.method.HideReturnsTransformationMethod;
@@ -27,6 +25,8 @@ public class Terza extends AppCompatActivity {
     private ActivityTerzaBinding binding;
     EditText password;
     EditText confermaPassword;
+
+    Button avanti;
     boolean passwordVisibile;
     boolean confermaVisibile;
     @Override
@@ -37,6 +37,15 @@ public class Terza extends AppCompatActivity {
         setContentView(binding.getRoot());
         password=findViewById(R.id.editTextTextPassword);
         confermaPassword=findViewById(R.id.ConfPasswordEditText);
+        avanti = (Button) findViewById(R.id.avanti3);
+        avanti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Terza.this, Quarta.class);
+                startActivity(intent);
+            }
+        });
+
         password.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
