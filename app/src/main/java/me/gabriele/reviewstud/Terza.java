@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -25,27 +26,12 @@ public class Terza extends AppCompatActivity {
     private ActivityTerzaBinding binding;
     EditText password;
     EditText confermaPassword;
-
+    EditText nome;
+    EditText cognome;
+    EditText matricola;
     Button avanti;
     boolean passwordVisibile;
     boolean confermaVisibile;
-    boolean nomeCompilato;
-    boolean cognomeCompilato;
-    boolean passwordUguali;
-
-    public boolean isPasswordUguali() {
-        if(password==confermaPassword) passwordUguali=true;
-        else passwordUguali=false;
-        return passwordUguali;
-    }
-
-    public boolean isCognomeCompilato() {
-        return cognomeCompilato;
-    }
-
-    public boolean isNomeCompilato() {
-        return nomeCompilato;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,14 +39,31 @@ public class Terza extends AppCompatActivity {
 
         binding = ActivityTerzaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        nome=findViewById(R.id.editTextTextPersonName);
+        cognome=findViewById(R.id.CognomeEditText);
+        matricola=findViewById(R.id.editTextTextPersonName2);
         password=findViewById(R.id.editTextTextPassword);
         confermaPassword=findViewById(R.id.ConfPasswordEditText);
         avanti = (Button) findViewById(R.id.avanti3);
         avanti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(nome.getText().toString().matches("")){
+                    Toast.makeText(getApplicationContext(),"Nome Assente!",Toast.LENGTH_LONG).show();
+                } else if (cognome.getText().toString().matches("")) {
+                    Toast.makeText(getApplicationContext(),"Cognome Assente!",Toast.LENGTH_LONG).show();
+                } else if (matricola.getText().toString().matches("")) {
+                    Toast.makeText(getApplicationContext(),"Matricola Assente!",Toast.LENGTH_LONG).show();
+                } else if (password.getText().toString().matches("")) {
+                    Toast.makeText(getApplicationContext(),"Password Assente!",Toast.LENGTH_LONG).show();
+                } else if (!(password.getText().toString().equals(confermaPassword.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(),"Password non uguali!",Toast.LENGTH_LONG).show();
+                } else if(password.getText().toString().equals(confermaPassword.getText().toString()) && !(nome.getText().toString().matches("")) && !(cognome.getText().toString().matches("")) && !(matricola.getText().toString().matches(""))){
                 Intent intent= new Intent(Terza.this, Quarta.class);
                 startActivity(intent);
+                } else{
+                    Toast.makeText(getApplicationContext(),"Errore generico contolla i campi dati",Toast.LENGTH_LONG).show();
+                }
             }
         });
 

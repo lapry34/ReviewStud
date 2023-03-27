@@ -25,15 +25,19 @@
         </activity>
         <activity
             android:name=".Seconda"
-            android:theme="@style/Theme.ReviewStud.NoActionBar">
+            android:theme="@style/Theme.ReviewStud.NoActionBar"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".Terza"
-            android:theme="@style/Theme.ReviewStud.NoActionBar">
+            android:theme="@style/Theme.ReviewStud.NoActionBar"
+            android:screenOrientation="portrait">
+
         </activity>
         <activity
             android:name=".Quarta"
-            android:theme="@style/Theme.ReviewStud.NoActionBar">
+            android:theme="@style/Theme.ReviewStud.NoActionBar"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
