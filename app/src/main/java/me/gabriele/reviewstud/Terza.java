@@ -29,6 +29,24 @@ public class Terza extends AppCompatActivity {
     EditText confermaPassword;
     boolean passwordVisibile;
     boolean confermaVisibile;
+    boolean nomeCompilato;
+    boolean cognomeCompilato;
+    boolean passwordUguali;
+
+    public boolean isPasswordUguali() {
+        if(password==confermaPassword) passwordUguali=true;
+        else passwordUguali=false;
+        return passwordUguali;
+    }
+
+    public boolean isCognomeCompilato() {
+        return cognomeCompilato;
+    }
+
+    public boolean isNomeCompilato() {
+        return nomeCompilato;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
