@@ -48,21 +48,21 @@ public class Terza extends AppCompatActivity {
         avanti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(password.getText().toString().equals(confermaPassword.getText().toString()) && !(nome.getText().toString().matches("")) && !(cognome.getText().toString().matches("")) && !(matricola.getText().toString().matches(""))){
+                if(nome.getText().toString().matches("")){
+                    Toast.makeText(getApplicationContext(),"Nome Assente!",Toast.LENGTH_LONG).show();
+                } else if (cognome.getText().toString().matches("")) {
+                    Toast.makeText(getApplicationContext(),"Cognome Assente!",Toast.LENGTH_LONG).show();
+                } else if (matricola.getText().toString().matches("")) {
+                    Toast.makeText(getApplicationContext(),"Matricola Assente!",Toast.LENGTH_LONG).show();
+                } else if (password.getText().toString().matches("")) {
+                    Toast.makeText(getApplicationContext(),"Password Assente!",Toast.LENGTH_LONG).show();
+                } else if (password.getText().toString().equals(confermaPassword.getText().toString())) {
+                    Toast.makeText(getApplicationContext(),"Password non uguali!",Toast.LENGTH_LONG).show();
+                } else if(password.getText().toString().equals(confermaPassword.getText().toString()) && !(nome.getText().toString().matches("")) && !(cognome.getText().toString().matches("")) && !(matricola.getText().toString().matches(""))){
                 Intent intent= new Intent(Terza.this, Quarta.class);
                 startActivity(intent);
-                }else if(!(password.getText().toString().equals(confermaPassword.getText().toString()))){
-                    Toast.makeText(getApplicationContext(),"Password non uguali PORCA MADONNA!",Toast.LENGTH_LONG).show();
-                } else if (nome.getText().toString().matches("")) {
-                    Toast.makeText(getApplicationContext(),"NON HAI MESSO IL NOME COJONE",Toast.LENGTH_LONG).show();
-                }else if (cognome.getText().toString().matches("")) {
-                    Toast.makeText(getApplicationContext(),"NON HAI MESSO IL COGNOME COJONE",Toast.LENGTH_LONG).show();
-                }else if (matricola.getText().toString().matches("")) {
-                    Toast.makeText(getApplicationContext(),"AO LA MATRICOLA TESTA DI CAZZO",Toast.LENGTH_LONG).show();
-                } else if (password.getText().toString().matches("")||confermaPassword.getText().toString().matches("")) {
-                   Toast.makeText(getApplicationContext(),"LE PASSWORD BABBO DI MINCHIA",Toast.LENGTH_LONG).show();
-                }else {
-                    Toast.makeText(getApplicationContext(), "COMPLIMENTI SEI RITARDATO E NON HAI COMPILATO NIENTE", Toast.LENGTH_LONG).show();
+                } else{
+                    Toast.makeText(getApplicationContext(),"Errore generico contolla i campi dati",Toast.LENGTH_LONG).show();
                 }
             }
         });
