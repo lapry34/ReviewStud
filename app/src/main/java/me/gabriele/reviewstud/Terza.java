@@ -56,7 +56,7 @@ public class Terza extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Matricola Assente!",Toast.LENGTH_LONG).show();
                 } else if (password.getText().toString().matches("")) {
                     Toast.makeText(getApplicationContext(),"Password Assente!",Toast.LENGTH_LONG).show();
-                } else if (password.getText().toString().equals(confermaPassword.getText().toString())) {
+                } else if (!(password.getText().toString().equals(confermaPassword.getText().toString()))) {
                     Toast.makeText(getApplicationContext(),"Password non uguali!",Toast.LENGTH_LONG).show();
                 } else if(password.getText().toString().equals(confermaPassword.getText().toString()) && !(nome.getText().toString().matches("")) && !(cognome.getText().toString().matches("")) && !(matricola.getText().toString().matches(""))){
                 Intent intent= new Intent(Terza.this, Quarta.class);
