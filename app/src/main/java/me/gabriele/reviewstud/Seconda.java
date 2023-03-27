@@ -26,7 +26,10 @@ public class Seconda extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivitySecondaBinding binding;
     EditText password;
+    EditText matricola;
+    Button connetti;
     boolean passwordVisibile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,9 @@ public class Seconda extends AppCompatActivity {
         binding = ActivitySecondaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         password=findViewById(R.id.editTextTextPassword);
+        matricola=findViewById(R.id.editTextTextPersonName);
+        connetti=(Button) findViewById(R.id.connetti);
+
         password.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
