@@ -15,6 +15,7 @@ public class Corso {
 	private final String nome;
 	private final String ssd;
 	private final int cfu;
+	private final int ID;
 	
 	//CAMPI ASSOCIAZIONE
 	private LinkCV linkCV;
@@ -22,10 +23,11 @@ public class Corso {
 	private HashSet<LinkTiene> professori;
 
 	//COSTRUTTORE
-	public Corso(String nome, int cfu, String ssd) {
+	public Corso(int ID, String nome, int cfu, String ssd) {
 		this.nome = nome;
 		this.cfu = cfu;
-		this.ssd = ssd;		
+		this.ssd = ssd;
+		this.ID = ID;		
 		cdl = new HashSet<LinkHa>();
 		professori = new HashSet<LinkTiene>();
 	}
@@ -143,6 +145,10 @@ public class Corso {
 				     " SSD: " + this.ssd +
 				     " CFU: " + this.cfu;	
 		return str;
+	}
+
+	public int getID() {
+		return ID;
 	}
 
 

@@ -7,9 +7,11 @@ public class LinkCV {
 	
 	private final Corso corso;
 	private final Valutazione val;
+	private final int ID;
 	
-	public LinkCV(Corso corso, Valutazione val) throws EccezionePrecondizioni {
+	public LinkCV(int ID, Corso corso, Valutazione val) throws EccezionePrecondizioni {
 		if(corso ==  null || val ==  null) throw new EccezionePrecondizioni();
+		this.ID = ID;
 		this.corso = corso;
 		this.val = val;
 	}
@@ -29,7 +31,7 @@ public class LinkCV {
 	
 	@Override
 	public String toString() {
-		return "Questo e' un link tra: " + corso.toString() + " e " + val.toString();
+		return "Questo è un link tra: " + corso.toString() + " e " + val.toString();
 	}
 	
 
@@ -39,6 +41,10 @@ public class LinkCV {
 
 	public Valutazione getVal() {
 		return val;
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }

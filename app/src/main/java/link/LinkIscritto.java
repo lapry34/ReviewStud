@@ -9,10 +9,12 @@ public class LinkIscritto {
 	private final Studente stud;
 	private final CorsoDiLaurea cdl;
 	private final int annoIscrizione;
+	private final int ID;
 	
 	//COSTRUTTORE
-	public LinkIscritto(Studente stud, CorsoDiLaurea cdl, int anno) throws EccezionePrecondizioni {
+	public LinkIscritto(int ID, Studente stud, CorsoDiLaurea cdl, int anno) throws EccezionePrecondizioni {
 		if(stud == null || cdl == null || anno == 0) throw new EccezionePrecondizioni();
+		this.ID = ID;
 		this.stud = stud;
 		this.cdl = cdl;
 		this.annoIscrizione = anno;
@@ -47,7 +49,11 @@ public class LinkIscritto {
 	
 	@Override
 	public String toString() {
-		return "Questo e' un link tra: " + stud.toString() + " e " + cdl.toString() + ". Anno di iscrizione: " + annoIscrizione;
+		return "Questo è un link tra: " + stud.toString() + " e " + cdl.toString() + ". Anno di iscrizione: " + annoIscrizione;
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }

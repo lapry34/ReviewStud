@@ -5,11 +5,13 @@ import attori.Studente;
 
 public class LinkScrive {
 
-	public final Studente stud;
-	public final Recensione rec;
+	private final Studente stud;
+	private final Recensione rec;
+	private final int ID;
 	
-	public LinkScrive(Studente stud, Recensione rec) throws EccezionePrecondizioni {
+	public LinkScrive(int ID, Studente stud, Recensione rec) throws EccezionePrecondizioni {
 		if(stud == null || rec == null) throw new EccezionePrecondizioni();
+		this.ID = ID;
 		this.stud = stud;
 		this.rec = rec;
 	}
@@ -38,7 +40,12 @@ public class LinkScrive {
 	
 	@Override
 	public String toString() {
-		return "Questo e' un link tra: " + stud.toString() + " e " + rec.toString();
+		return "Questo è un link tra: " + stud.toString() + " e " + rec.toString();
+	}
+
+
+	public int getID() {
+		return ID;
 	}
 	
 }

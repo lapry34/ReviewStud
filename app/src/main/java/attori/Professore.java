@@ -16,8 +16,11 @@ public class Professore {
 	private LinkVP linkVP;
 	private HashSet<LinkTiene> corsi;
 	
-	public Professore(String nome, String cognome) {
+	private final int ID;
+	
+	public Professore(int ID, String nome, String cognome) {
 		super();
+		this.ID = ID;
 		this.linkVP = null;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -102,6 +105,10 @@ public class Professore {
 
 	public void rimManTiene(ManagerTiene m) {
 		if(m!=null) corsi.remove(m.getLink());		
+	}
+
+	public int getID() {
+		return ID;
 	}
 		
 }

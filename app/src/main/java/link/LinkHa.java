@@ -9,10 +9,12 @@ public class LinkHa {
 	private final Corso corso;
 	private final CorsoDiLaurea cdl;
 	private final String annoCorso;		//STRINGA DEL TIPO 21-22 o 21/22
+	private final int ID;
 	
 	//COSTRUTTORE
-	public LinkHa(Corso corso, CorsoDiLaurea cdl, String anno) throws EccezionePrecondizioni {
+	public LinkHa(int ID, Corso corso, CorsoDiLaurea cdl, String anno) throws EccezionePrecondizioni {
 		if(corso == null || cdl == null || anno == null) throw new EccezionePrecondizioni();
+		this.ID = ID;
 		this.corso = corso;
 		this.cdl = cdl;
 		this.annoCorso = anno;
@@ -47,7 +49,11 @@ public class LinkHa {
 	
 	@Override
 	public String toString() {
-		return "Questo e' un link tra: " + corso.toString() + " e " + cdl.toString() + ".\nAnno del Corso: " + annoCorso;
+		return "Questo è un link tra: " + corso.toString() + " e " + cdl.toString() + ".\nAnno del Corso: " + annoCorso;
+	}
+
+	public int getID() {
+		return ID;
 	}
 	
 }
