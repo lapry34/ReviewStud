@@ -31,7 +31,7 @@ public class LinkRV {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + rec.toString() + " e " + val.toString();
+		return "Questo e un link tra: " + rec.toString() + " e " + val.toString();
 	}
 	
 

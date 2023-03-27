@@ -1,9 +1,12 @@
 package me.gabriele.reviewstud;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.DropBoxManager;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,22 +32,25 @@ public class Quarta extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-
+            setContentView(R.layout.activity_quarta);
             binding = ActivityQuartaBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
 
-            RadioGroup rg= findViewById(R.id.radioGroup);
-            TextView tc1= findViewById(R.id.corsolaurea);
-            TextView tc2= findViewById(R.id.corsolaurea2);
-            CheckBox c=findViewById(R.id.accetta_termini);
-            Button m=findViewById(R.id.manda_email);
-            AutoCompleteTextView a1=findViewById(R.id.menu_text1);
-            AutoCompleteTextView a2=findViewById(R.id.menu_text2);
-            TextInputLayout til1= findViewById(R.id.TendinaCorso1);
-            TextInputLayout til2= findViewById(R.id.TendinaCorso2);
+            RadioGroup rg = findViewById(R.id.radioGroup);
+            TextView tc1 = findViewById(R.id.corsolaurea);
+            TextView tc2 = findViewById(R.id.corsolaurea2);
+            CheckBox c = findViewById(R.id.accetta_termini);
+            Button m = findViewById(R.id.manda_email);
+            AutoCompleteTextView a1 = findViewById(R.id.menu_text1);
+            AutoCompleteTextView a2 = findViewById(R.id.menu_text2);
+            TextInputLayout til1 = findViewById(R.id.TendinaCorso1);
+            TextInputLayout til2 = findViewById(R.id.TendinaCorso2);
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_dropdown_item_1line, COUNTRIES);
 
             tc1.setVisibility(View.INVISIBLE);
-            tc2.setVisibility(View.INVISIBLE);
+              tc2.setVisibility(View.INVISIBLE);
             a1.setVisibility(View.INVISIBLE);
             a2.setVisibility(View.INVISIBLE);
             c.setVisibility(View.INVISIBLE);
@@ -55,10 +61,12 @@ public class Quarta extends AppCompatActivity {
             rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                    RadioButton checkedRadioButton = (RadioButton)group.findViewById(checkedId);
+                    RadioButton checkedRadioButton = (RadioButton) group.findViewById(checkedId);
                     boolean isChecked = checkedRadioButton.isChecked();
-                    if(checkedId == R.id.radio_si) {
+                    if (checkedId == R.id.radio_si) {
                         if (isChecked) {
+                            a1.setAdapter(adapter);
+                            a2.setAdapter(adapter);
                             tc1.setVisibility(View.VISIBLE);
                             //  mc1.setVisibility(View.VISIBLE);
                             tc2.setVisibility(View.VISIBLE);
@@ -70,9 +78,9 @@ public class Quarta extends AppCompatActivity {
                             til1.setVisibility(View.VISIBLE);
                             til2.setVisibility(View.VISIBLE);
                         }
-                    }
-                    else if(checkedId == R.id.radio_no){
+                    } else if (checkedId == R.id.radio_no) {
                         if (isChecked) {
+                            a1.setAdapter(adapter);
                             tc1.setVisibility(View.VISIBLE);
                             //   mc1.setVisibility(View.VISIBLE);
                             a1.setVisibility(View.VISIBLE);
@@ -82,12 +90,17 @@ public class Quarta extends AppCompatActivity {
                             til2.setVisibility(View.INVISIBLE);
                             a2.setVisibility(View.INVISIBLE);
                             tc2.setVisibility(View.INVISIBLE);
-                            }
                         }
                     }
+                }
             });
 
+
         }
+
+        private static final String[] COUNTRIES = new String[] {
+                    "Belgium", "France", "Italy", "Germany", "Spain", "Ireland", "England", "Peru", "Colombia"
+        };
 
         @Override
         public boolean onSupportNavigateUp() {
@@ -96,4 +109,5 @@ public class Quarta extends AppCompatActivity {
                     || super.onSupportNavigateUp();
         }
     }
+
 

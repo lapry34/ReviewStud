@@ -29,7 +29,7 @@ public class LinkVP {
 	
 	@Override
 	public String toString() {
-		return "Questo è un link tra: " + val.toString() + " e " + prof.toString();
+		return "Questo e un link tra: " + val.toString() + " e " + prof.toString();
 	}
 	
 

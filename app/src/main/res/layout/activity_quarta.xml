@@ -72,41 +72,43 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         />
 
+
+
+    <TextView
+        android:id="@+id/corsolaurea2"
+        android:layout_width="294dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="80dp"
+        android:text="Secondo Corso di Laurea"
+        android:textColor="#822433"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/corsolaurea"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/corsolaurea"
+        app:layout_constraintTop_toBottomOf="@+id/corsolaurea" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TendinaCorso1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="285dp"
-        android:layout_height="59dp"
+        android:layout_height="70dp"
         android:hint="Scegli Corso"
         app:layout_constraintStart_toStartOf="@+id/corsolaurea"
         app:layout_constraintTop_toBottomOf="@+id/corsolaurea">
 
         <AutoCompleteTextView
             android:id="@+id/menu_text1"
-            android:layout_width="280dp"
-            android:layout_height="49dp"
-            android:inputType="none"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/corsolaurea2"
-        android:layout_width="196dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="80dp"
-        android:text="Corso di Laurea 2"
-        android:textColor="#822433"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/corsolaurea"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/corsolaurea"
-        app:layout_constraintTop_toBottomOf="@+id/corsolaurea"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TendinaCorso2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="285dp"
-        android:layout_height="62dp"
+        android:layout_height="70dp"
         android:hint="Scegli Corso"
         app:layout_constraintStart_toStartOf="@+id/corsolaurea2"
         app:layout_constraintTop_toBottomOf="@+id/corsolaurea2">
@@ -114,15 +116,15 @@
         <AutoCompleteTextView
             android:id="@+id/menu_text2"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:inputType="none" />
+            android:layout_height="wrap_content"
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/accetta_termini"
         android:layout_width="253dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_marginTop="96dp"
         android:text="Accetto i termini di condizione"
         app:layout_constraintEnd_toEndOf="@+id/TendinaCorso2"
@@ -140,6 +142,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/accetta_termini"
         app:layout_constraintTop_toBottomOf="@+id/accetta_termini"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
