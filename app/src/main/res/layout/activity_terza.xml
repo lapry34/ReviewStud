@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/avanti"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:textAlignment="textEnd"
-    tools:context=".Terza">
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/avanti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        tools:context=".Terza">
 
 
     <TextView
@@ -118,20 +123,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
-    <Button
-        android:id="@+id/avanti3"
-        android:layout_width="118dp"
-        android:layout_height="55dp"
-        android:backgroundTint="#822433"
-        android:forceHasOverlappingRendering="false"
-        android:text="Avanti"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ConfPasswordEditText"
-        app:layout_constraintStart_toStartOf="@+id/ConfPasswordEditText"
-        app:layout_constraintTop_toBottomOf="@+id/ConfPasswordEditText"
-        app:layout_constraintVertical_bias="0.542" />
+        <Button
+            android:id="@+id/avanti3"
+            android:layout_width="118dp"
+            android:layout_height="55dp"
+            android:backgroundTint="#822433"
+            android:forceHasOverlappingRendering="false"
+            android:text="Avanti"
+            android:layout_marginTop="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/ConfPasswordEditText"
+            app:layout_constraintHorizontal_bias="0.519"
+            app:layout_constraintStart_toStartOf="@+id/ConfPasswordEditText"
+            app:layout_constraintTop_toBottomOf="@+id/ConfPasswordEditText"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <EditText
+        <EditText
         android:id="@+id/ConfPasswordEditText"
         android:layout_width="220dp"
         android:layout_height="39dp"
@@ -193,3 +200,4 @@
         app:layout_constraintTop_toBottomOf="@+id/matricola" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

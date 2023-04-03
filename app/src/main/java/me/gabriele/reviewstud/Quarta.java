@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.ArrayList;
 
 import me.gabriele.reviewstud.databinding.ActivityQuartaBinding;
 import me.gabriele.reviewstud.databinding.ActivityTerzaBinding;
@@ -95,6 +98,12 @@ public class Quarta extends AppCompatActivity {
                 }
             });
 
+          /*  a1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                @Override
+                public void onFocusChange(View view, boolean b) {
+                    ArrayList<String> result= ((ListAdapter) a1.getAdapter()).
+                }
+            });*/
 
         }
 
