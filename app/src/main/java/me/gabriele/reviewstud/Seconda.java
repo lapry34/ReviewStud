@@ -20,6 +20,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import me.gabriele.reviewstud.databinding.ActivitySecondaBinding;
+import me.gabriele.reviewstud.listener.SecondaOnClickListener;
+import me.gabriele.reviewstud.listener.SecondaOnTouchListener;
 
 public class Seconda extends AppCompatActivity {
 
@@ -40,35 +42,11 @@ public class Seconda extends AppCompatActivity {
         matricola=findViewById(R.id.editTextTextPersonName);
         connetti=(Button) findViewById(R.id.connetti);
 
-        password.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                final int right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP){
-                    if(motionEvent.getRawX()>=password.getRight()-password.getCompoundDrawables()[right].getBounds().width()){
-                        int selection=password.getSelectionEnd();
-                        int sel=password.getSelectionStart();
-                        if(passwordVisibile){
-                            //set drawable image here
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds( R.drawable.baseline_lock_24,0,R.drawable.baseline_visibility_off_24,0);
-                            //for hide password
-                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisibile=false;
-                        }else {
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_lock_24, 0, R.drawable.baseline_visibility_24, 0);
-                            //for show password
-                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisibile = true;
-                        }
-                        password.setSelection(selection);
-                        password.setSelection(sel);
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
+        SecondaOnClickListener clickListener = new SecondaOnClickListener(this);
+        SecondaOnTouchListener touchListener = new SecondaOnTouchListener(this);
 
+        password.setOnTouchListener(touchListener);
+        connetti.setOnClickListener(clickListener);
     }
 
     @Override

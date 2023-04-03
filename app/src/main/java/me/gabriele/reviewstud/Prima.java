@@ -17,6 +17,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import me.gabriele.reviewstud.databinding.ActivityPrimaBinding;
+import me.gabriele.reviewstud.listener.PrimaOnClickListener;
 
 public class Prima extends AppCompatActivity {
 
@@ -31,31 +32,13 @@ public class Prima extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(binding.getRoot());
 
+        PrimaOnClickListener btnListener = new PrimaOnClickListener(this);
+
        Button connetti=(Button) findViewById(R.id.connetti);
        Button iscriviti=(Button) findViewById(R.id.iscriviti);
 
-       connetti.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                Intent intent= new Intent(Prima.this, Seconda.class);
-                 startActivity(intent);
-             }
-         });
-
-
-
-
-
-    iscriviti.setOnClickListener(new View.OnClickListener() {
-
-        @Override
-        public void onClick(View view) {
-            Intent intent= new Intent(Prima.this, Terza.class);
-            startActivity(intent);
-        }
-    });
-
-
+       connetti.setOnClickListener(btnListener);
+       iscriviti.setOnClickListener(btnListener);
 
 }
 
