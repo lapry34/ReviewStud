@@ -19,24 +19,28 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import me.gabriele.reviewstud.databinding.ActivityTerzaBinding;
+import me.gabriele.reviewstud.listener.TerzaOnClickListener;
+import me.gabriele.reviewstud.listener.TerzaOnTouchListener;
 
 public class Terza extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityTerzaBinding binding;
-    EditText password;
-    EditText confermaPassword;
-    EditText nome;
-    EditText cognome;
-    EditText matricola;
-    Button avanti;
+    /**
+     *
+     */
+    private EditText password;
+    private EditText confermaPassword;
+    private EditText nome;
+    private EditText cognome;
+    private EditText matricola;
+    private Button avanti;
     boolean passwordVisibile;
     boolean confermaVisibile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityTerzaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         nome=findViewById(R.id.editTextTextPersonName);
@@ -45,87 +49,12 @@ public class Terza extends AppCompatActivity {
         password=findViewById(R.id.editTextTextPassword);
         confermaPassword=findViewById(R.id.ConfPasswordEditText);
         avanti = (Button) findViewById(R.id.avanti3);
-        avanti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(nome.getText().toString().matches("")){
-                    Toast.makeText(getApplicationContext(),"Nome Assente!",Toast.LENGTH_LONG).show();
-                } else if (cognome.getText().toString().matches("")) {
-                    Toast.makeText(getApplicationContext(),"Cognome Assente!",Toast.LENGTH_LONG).show();
-                } else if (matricola.getText().toString().matches("")) {
-                    Toast.makeText(getApplicationContext(),"Matricola Assente!",Toast.LENGTH_LONG).show();
-                } else if (password.getText().toString().matches("")) {
-                    Toast.makeText(getApplicationContext(),"Password Assente!",Toast.LENGTH_LONG).show();
-                } else if (!(password.getText().toString().equals(confermaPassword.getText().toString()))) {
-                    Toast.makeText(getApplicationContext(),"Password non uguali!",Toast.LENGTH_LONG).show();
-                } else if(password.getText().toString().equals(confermaPassword.getText().toString()) && !(nome.getText().toString().matches("")) && !(cognome.getText().toString().matches("")) && !(matricola.getText().toString().matches(""))){
-                Intent intent= new Intent(Terza.this, Quarta.class);
-                startActivity(intent);
-                } else{
-                    Toast.makeText(getApplicationContext(),"Errore generico contolla i campi dati",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
 
-        password.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                final int right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP){
-                    if(motionEvent.getRawX()>=password.getRight()-password.getCompoundDrawables()[right].getBounds().width()){
-                        int selection=password.getSelectionEnd();
-                        int sel=password.getSelectionStart();
-                        if(passwordVisibile){
-                            //set drawable image here
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds( R.drawable.baseline_lock_24,0,R.drawable.baseline_visibility_off_24,0);
-                            //for hide password
-                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisibile=false;
-                        }else {
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_lock_24, 0, R.drawable.baseline_visibility_24, 0);
-                            //for show password
-                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisibile = true;
-                        }
-                        password.setSelection(selection);
-                        password.setSelection(sel);
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
-        confermaPassword.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                final int right=2;
-                if(motionEvent.getAction()==MotionEvent.ACTION_UP){
-                    if(motionEvent.getRawX()>=confermaPassword.getRight()-confermaPassword.getCompoundDrawables()[right].getBounds().width()){
-                        int selection=confermaPassword.getSelectionEnd();
-                        int sel=confermaPassword.getSelectionStart();
-                        if(confermaVisibile){
-                            //set drawable image here
-                            confermaPassword.setCompoundDrawablesRelativeWithIntrinsicBounds( R.drawable.baseline_lock_24,0,R.drawable.baseline_visibility_off_24,0);
-                            //for hide password
-                            confermaPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            confermaVisibile=false;
-                        }else {
-                            confermaPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.baseline_lock_24, 0, R.drawable.baseline_visibility_24, 0);
-                            //for show password
-                            confermaPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            confermaVisibile = true;
-                        }
-                        confermaPassword.setSelection(selection);
-                        confermaPassword.setSelection(sel);
-                        return true;
-                    }
-                }
-                return false;
-            }
+        TerzaOnClickListener clickListener = new TerzaOnClickListener(this);
+        avanti.setOnClickListener(clickListener);
 
-        });
-
-
+        TerzaOnTouchListener touchListener = new TerzaOnTouchListener(this);
+        password.setOnTouchListener(touchListener);
     }
 
     @Override
@@ -133,5 +62,25 @@ public class Terza extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_prima);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public EditText getPassword() {
+        return password;
+    }
+
+    public EditText getConfermaPassword() {
+        return confermaPassword;
+    }
+
+    public EditText getNome() {
+        return nome;
+    }
+
+    public EditText getCognome() {
+        return cognome;
+    }
+
+    public EditText getMatricola() {
+        return matricola;
     }
 }
