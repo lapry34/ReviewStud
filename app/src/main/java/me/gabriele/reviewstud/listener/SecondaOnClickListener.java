@@ -21,10 +21,10 @@ public class SecondaOnClickListener implements View.OnClickListener {
         Intent intent = null;
         switch(ButtonID){
             default:
-                intent = new Intent(seconda, Terza.class);
+                intent = new Intent(seconda, null);
                 break;
         }
-        seconda.startActivity(intent);
+        //seconda.startActivity(intent);
         return;
     }
 }
